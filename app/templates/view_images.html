@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main %}
+{% raw %}
+    <h1 class="page-header">View Images</h1>
+
+    <br>
+    <br>
+
+    <div ng-app="imagesApp" ng-controller="imagesCtrl"> 
+
+      <div ng-repeat="img in imageData track by $index">
+        <img class ="item" src="{{ img }}" />
+      </div>
+
+    </div>
+
+    <script>
+    var app = angular.module('imagesApp', []);
+    app.controller('imagesCtrl', function($scope, $http) {
+      $http.get('/api/thumbnails').then(function(response) {
+          $scope.imageData = response.data.thumbnails;
+        });
+    });
+    </script>
+{% endraw %}
+{% endblock %}

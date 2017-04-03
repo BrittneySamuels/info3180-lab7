@@ -1,0 +1,19 @@
+body {
+    padding-top: 50px;
+}
+
+.nav-tabs {
+    margin-bottom: 15px;
+}
+
+.item{
+	height : 200px;
+	width : 300px;
+	float : left;
+	border-style: solid;
+	border-color: lightgray;
+    border-width: 1px;
+	border-radius: 4px;
+	padding: 20px;
+	margin-bottom: 20px;
+}
